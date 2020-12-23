@@ -1,0 +1,14 @@
+body {
+    background-color: orange;
+    height: 100vh;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    cursor: pointer;
+    height: 70px;
+    background-color: gray;
+    color: orange;
+}
