@@ -1,22 +1,21 @@
-export class EmailPreview extends React.Component{
 
 
 
+    const { Link } = ReactRouterDOM;
 
+    export function EmailPreview({ email }) {
+    
+     
+    
+        return (
 
-    state={
-         subject : 'Wassap?',
-    body: 'Pick up!',
-    isRead: false,
-    sentAt : 1551133930594
+            <article className="email-preview">
+                <h1 className="email-preview-subject">{email.subject}</h1>
+                <h1 className="email-preview-body" >{email.body}</h1>
+            </article>
+    
+    )
+    }
+
 
     
-    }
-
-    render(){
-        return <section>
-            <h1>an mail</h1>
-            <h1> {this.state.subject}</h1>
-        </section>
-    }
-}
