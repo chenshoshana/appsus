@@ -1,7 +1,8 @@
+import { utilService } from "./util-service.js"
 
 export const noteService = {
     query,
-    // saveReview,
+    remove
     // getCurrency
 }
 
@@ -49,4 +50,8 @@ function _createNotes() {
             }
         }]
     )
+}
+
+function remove(noteId) {
+    notes = notes.filter(note => note.id !== noteId);
 }
