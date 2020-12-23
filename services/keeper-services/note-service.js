@@ -19,6 +19,7 @@ function _createNotes() {
     //     booksFromStorage = [
     return ([
         {
+            id: "df52e3",
             type: "NoteText",
             isPinned: true,
             info: {
@@ -26,6 +27,7 @@ function _createNotes() {
             }
         },
         {
+            id: "ef52e3",
             type: "NoteImg",
             info: {
                 url: "http://some-img/me",
@@ -36,6 +38,7 @@ function _createNotes() {
             }
         },
         {
+            id: "gf52e3",
             type: "NoteTodos",
             info: {
                 label: "How was it:",
