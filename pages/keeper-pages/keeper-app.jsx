@@ -24,14 +24,32 @@ export class KeeperApp extends React.Component {
         this.setState({ notes })
     };
 
+    onAddNote = (ev) => {//on submit
+        ev.preventDefault();
+
+        if (this.state.noteToAdd.length < 1) {
+            alert('mast write somethig!');
+            return;
+        }
+
+        noteService.add(this.state.noteToAdd);
+        this.loadNotes();
+    };
+
+    onRemoveNote = (noteId) => {
+        noteService.remove(noteId);
+        this.loadNotes();
+    };
+
     // getPetsForDisplay = () => {
     //     return this.state.notes
     // }
     render() {
         return <section className="note-app">
+            <input type="text" className="note-input" placeholder="What's on you'r mind..." ></input>
             <div className="txt-notes">
-                <h2>Notes</h2>
-                {this.state.notes.length > 0 && <NoteList notes={this.state.notes} />}
+            <h2>Pinned notes</h2>
+                {this.state.notes.length > 0 && <NoteList notes={this.state.notes} onRemove={this.onRemoveNote} />}
             </div>
         </section>
     }
