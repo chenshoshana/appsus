@@ -29,6 +29,11 @@ export class MailApp extends React.Component{
     render(){
         return <section>
             <h1>aderajoe</h1>
+            <form>
+                <input type="email" placeholder="Write to" ></input>
+                <input placeholder="Mail content" ></input>
+                <button>send</button>
+            </form>
             <EmailList mails={this.state.mails} />
         </section>
     }
