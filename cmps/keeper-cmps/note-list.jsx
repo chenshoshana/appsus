@@ -1,6 +1,10 @@
-export function NoteList (props){
+import { NotePreview } from "./note-preview.jsx";
 
-    return <div>
-    </div>
-        //map
+export function NoteList({notes}) {
+    console.log('notes', notes);
+    return (
+        notes.map(note => {
+            return <NotePreview key={note.id} note={note} />;
+        })
+    )
 }
