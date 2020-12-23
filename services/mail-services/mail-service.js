@@ -6,16 +6,14 @@ export const mailService = {
 
 function query() {
     // return Promise.resolve(notes)
-    return notes
+    return mails
 }
 
-var notes = _createNotes()
-window.theNotes = notes
+var mails = _createMails()
+window.theNotes = mails
 
-function _createNotes() {
-    // var booksFromStorage = storageService.loadFromStorage(KEY)
-    // if (!booksFromStorage || !booksFromStorage.length) {
-    //     booksFromStorage = [
+function _createMails() {
+
     return ([{
             idx: 0,
             subject: 'Wassap?',

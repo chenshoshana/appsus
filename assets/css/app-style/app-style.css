@@ -12,3 +12,20 @@ body {
     background-color: gray;
     color: orange;
 }
+
+.email-preview {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-around;
+}
+
+.email-preview:hover {
+    background-color: rgb(223, 206, 184);
+    display: flex;
+    justify-content: space-around;
+}
+
+.email-preview-body {
+    flex-grow: 1;
+    justify-content: center;
+}
