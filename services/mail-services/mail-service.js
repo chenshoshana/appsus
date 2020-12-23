@@ -37,3 +37,7 @@ function _createMails() {
         }
     ])
 }
+
+function _saveMailsToStorage(mailsFromStorage = mails) {
+    storageService.saveToStorage(KEY, mailsFromStorage)
+}
