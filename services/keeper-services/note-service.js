@@ -17,7 +17,7 @@ function _createNotes() {
     // var booksFromStorage = storageService.loadFromStorage(KEY)
     // if (!booksFromStorage || !booksFromStorage.length) {
     //     booksFromStorage = [
-    return (
+    return ([
         {
             type: "NoteText",
             isPinned: true,
@@ -44,6 +44,6 @@ function _createNotes() {
                     { txt: "Do this", doneAt: 187111111 }
                 ]
             }
-        }
+        }]
     )
 }
