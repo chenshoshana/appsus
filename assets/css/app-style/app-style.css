@@ -1,18 +1,21 @@
 body {
-    background-color: orange;
+    background-color: rgb(212, 212, 212);
+    
     height: 100vh;
 }
 
 .nav-list {
+    background-color: rgba(253, 176, 33, 0.883);
     display: flex;
     list-style: none;
     justify-content: space-around;
     cursor: pointer;
     height: 70px;
-    background-color: gray;
-    color: orange;
+    
+    color: rgba(255, 166, 0, 0.945);
 }
-
+/* ************************************************************************************************************************************ */
+/* EMAIL-STYLE */
 .email-preview {
     background-color: antiquewhite;
     display: flex;
@@ -29,3 +32,28 @@ body {
     flex-grow: 1;
     justify-content: center;
 }
+
+/* ************************************************************************************************************************************** */
+/* ************************************************************************************************************************************ */
+/* KEEPER-STYLE */
+.note-preview{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    height: 300px;
+    width: 200px;
+    margin: 20px;
+}
+.delet-note-btn{
+    width: 25px;
+    background-color: red;
+    cursor: pointer;
+    text-align: center;
+    justify-content: space-between;
+    display: inline;
+}
+.note-h1{
+    display: inline;
+}
+/* ************************************************************************************************************************************** */
+
