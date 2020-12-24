@@ -1,5 +1,6 @@
 import { EmailList } from '../../cmps/mail-cmps/email-list.jsx'
 import { mailService } from "../../services/mail-services/mail-service.js";
+import { NewMail } from "../../cmps/mail-cmps/email-compose.jsx";
 
 
 export class MailApp extends React.Component{
@@ -8,7 +9,16 @@ export class MailApp extends React.Component{
     state={
      mails: [
          
-   ] 
+   ] ,
+   newMail:[
+    {
+        idx: 4,
+        subject: 'aderajoe',
+        body: 'what time is it?',
+        isRead: false,
+        sentAt: 1551133930594
+    }
+   ]
    }
 
 
@@ -25,15 +35,10 @@ export class MailApp extends React.Component{
      this.setState({ mails })
  };
 
-
     render(){
         return <section>
             <h1>aderajoe</h1>
-            <form>
-                <input type="email" placeholder="Write to" ></input>
-                <input placeholder="Mail content" ></input>
-                <button>send</button>
-            </form>
+           <NewMail/>
             <EmailList mails={this.state.mails} />
         </section>
     }
