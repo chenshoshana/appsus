@@ -8,8 +8,8 @@ export class KeeperApp extends React.Component {
         notes: [],
         noteToAdd: { name: '', sub: 0, body: 'hello' },
         filterBy: {
-            name: '',
-            power: null
+            type: '',
+           
         }
     };
 
@@ -26,6 +26,7 @@ export class KeeperApp extends React.Component {
     };
 
     onAddNote = (note) => {//on submit
+       
         noteService.add(note);
         this.loadNotes()
     };

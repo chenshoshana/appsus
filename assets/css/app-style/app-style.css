@@ -43,21 +43,28 @@ body {
     height: 300px;
     width: 200px;
     margin: 20px;
-}
-.delet-note-btn{
-    width: 25px;
-    background-color: red;
-    cursor: pointer;
-    text-align: center;
     justify-content: space-between;
-    display: inline;
 }
+
 .note-h1{
-    display: inline;
+    text-align: center;
+  
 }
 .note-input{
     width: 600px;
     height: 60px;
+    border: 2px solid rgb(88, 87, 87);
+}
+
+.note-btns{
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer
+}
+.add-note-btn{
+  
+    height: 65px;
+    ;
 }
 /* ************************************************************************************************************************************** */
 
