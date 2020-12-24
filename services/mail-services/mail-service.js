@@ -3,6 +3,7 @@ import { storageService } from "../storage-service.js";
 
 export const mailService = {
     query,
+    sendMail
     // saveReview,
     // getCurrency
 }
@@ -21,14 +22,14 @@ function query() {
 
 function sendMail(newMail) {
 
-    newMail = {
-        idx: 5,
-        subject: 'Wafgssap?',
-        body: 'Pick up!',
-        isRead: true,
-        sentAt: 1551133930594
-    }
-    mails.push(mail)
+    // newMail = {
+    //     idx: 5,
+    //     subject: 'Wafgssap?',
+    //     body: 'Pick up!',
+    //     isRead: true,
+    //     sentAt: 1551133930594
+    // }
+    mails.push(newMail)
 
     _saveMailsToStorage();
 
@@ -66,5 +67,8 @@ function _createMails() {
 }
 
 function _saveMailsToStorage(mailsFromStorage = mails) {
+    console.log('1')
+    console.log(mails)
+    console.log('1')
     storageService.save(KEY, mailsFromStorage)
 }
