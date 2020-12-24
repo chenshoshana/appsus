@@ -12,29 +12,36 @@ export class NoteAdd extends React.Component {
     }
 
     onInputChange = (ev) => {//on input change
-        console.log('ev.target.name:', ev.target.name);
-        console.log('ev.target.value:', ev.target.value);
 
         const value = ev.target.value;
-
-        const noteCopy = { ...this.state.noteToAdd };
-        noteCopy.info[ev.target.name] = value
-
+        
+        const noteInfoCopy = { ...this.state.noteToAdd.info };
+        noteInfoCopy[ev.target.name] = value
+        
         this.setState({
-            noteToAdd: noteCopy
+            noteToAdd: {
+                ...this.state.noteToAdd,
+                info: noteInfoCopy
+            }
         });
     };
-
+    
     onAddNote = (ev) => {
+        
         ev.preventDefault()
+        if (this.state.noteToAdd.info < 1) {
+            alert('must write something!');
+            return;
+        }
         this.props.addNote(this.state.noteToAdd)
     }
 
     render() {
         return <form onSubmit={this.onAddNote} >
             <input value={this.state.noteToAdd.txt} type="text" className="note-input"
-                placeholder="What's on you'r mind..." name="txt" onChange={this.onInputChange} ></input>
-            <button type="submit">Add Note</button>
+                placeholder="What's on you'r mind..." name="txt" onChange={this.onInputChange}  ></input>
+                
+            <button className="add-note-btn" type="submit">Add Note</button>
         </form>
     }
 

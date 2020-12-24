@@ -6,6 +6,7 @@ export function NoteList({notes, onRemove }) {
         notes.map(note => {
             return <NotePreview key={note.id} note={note} 
             onRemove={onRemove} />;
+            
         })
     )
 }
