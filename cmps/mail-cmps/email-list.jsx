@@ -6,6 +6,8 @@ export function EmailList({ mails}) {
      <section className="mails-list">
 
         {mails.map(email => {
+            console.log('hello')
+            if(!email)return <div>dont work</div>
             return <EmailPreview key={email.idx}  email={email}/>
         })}
         </section>
