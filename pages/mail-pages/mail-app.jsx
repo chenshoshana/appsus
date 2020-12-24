@@ -20,7 +20,19 @@ export class MailApp extends React.Component{
     }
    ]
    }
-
+   createNewMail = () => {
+    console.log('new mail')
+    let newMail = { ...this.state.mail };
+    console.log(newMail)
+    mailService.sendMail(newMail)
+    let mails = mailService.query()
+    // .then(books => this.setState({ notes })) when use promise.
+    // console.log(newM)
+    //  mails.push(this.state.mail)dfdfggg
+    newMail.sentAt= Date.now()
+     this.setState({mails})
+    //  return mails
+}
 
 
    componentDidMount() {
