@@ -1,56 +1,42 @@
 import { EmailList } from '../../cmps/mail-cmps/email-list.jsx'
 import { mailService } from "../../services/mail-services/mail-service.js";
 import { NewMail } from "../../cmps/mail-cmps/email-compose.jsx";
+import { utilService } from "../../services/keeper-services/util-service.js";
 
 
-export class MailApp extends React.Component{
+export class MailApp extends React.Component {
 
-    
-    state={
-     mails: [
-         
-   ] ,
-   newMail:[
-    {
-        idx: 4,
-        subject: 'aderajoe',
-        body: 'what time is it?',
-        isRead: false,
-        sentAt: 1551133930594
+
+    state = {
+        mails: []
     }
-   ]
-   }
-   createNewMail = () => {
-    console.log('new mail')
-    let newMail = { ...this.state.mail };
-    console.log(newMail)
-    mailService.sendMail(newMail)
-    let mails = mailService.query()
-    // .then(books => this.setState({ notes })) when use promise.
-    // console.log(newM)
-    //  mails.push(this.state.mail)dfdfggg
-    newMail.sentAt= Date.now()
-     this.setState({mails})
-    //  return mails
-}
+    createNewMail = (newMail) => {
+        mailService.sendMail(newMail)
+        this.loadMails()
+        console.log(newMail)
+        // console.log('new mail')
+        // let newMail = { ...this.state.mail };
+        // console.log(newMail)
+        // mailService.sendMail(newMail)
+        // let mails = mailService.query()
+        //  this.setState({mails})
+
+    }
 
 
-   componentDidMount() {
-    console.log('Page is ready');
-    // this.getBooksToDisplay()
-    this.loadMails()
-}
-   loadMails = () => {
+    componentDidMount() {
+        this.loadMails()
+    }
+    loadMails = () => {
 
-    var mails = mailService.query()
-     // .then(books => this.setState({ notes })) when use promise.
-     this.setState({ mails })
- };
+        var mails = mailService.query()
+        this.setState({ mails })
+    };
 
-    render(){
+    render() {
         return <section>
             <h1>aderajoe</h1>
-           <NewMail/>
+            <NewMail sendMail={this.createNewMail} />
             <EmailList mails={this.state.mails} />
         </section>
     }
