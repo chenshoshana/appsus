@@ -25,14 +25,8 @@ export class KeeperApp extends React.Component {
         this.setState({ notes })
     };
 
-    onAddNote = (ev) => {//on submit
-        ev.preventDefault();
-        console.log(ev);
-        if (this.state.noteToAdd.txt < 1) {
-            alert('must write something!');
-            return;
-        };
-        noteService.add(this.state.noteToAdd);
+    onAddNote = (note) => {//on submit
+        noteService.add(note);
         this.loadNotes()
     };
 
@@ -46,7 +40,7 @@ export class KeeperApp extends React.Component {
     // }
     render() {
         return <section className="note-app">
-            <NoteAdd />
+            <NoteAdd addNote={this.onAddNote} />
             <div className="txt-notes">
                 <h2>Pinned notes</h2>
                 {this.state.notes && this.state.notes.length > 0 && <NoteList notes={this.state.notes} onRemove={this.onRemoveNote} />}

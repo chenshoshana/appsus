@@ -30,7 +30,7 @@ function _createNotes() {
         },
         {
             id: "ef52e3",
-            type: "NoteImg",
+            type: "NoteImg",    
             info: {
                 url: "http://some-img/me",
                 title: "Me playing Mi"
@@ -50,6 +50,7 @@ function _createNotes() {
                 ]
             }
         }]
+        storageService.save(KEY, notesFromStorage)
     }
     return notesFromStorage
 }
@@ -68,7 +69,7 @@ function add(note) {
     console.log('noteToAdd:', noteToAdd);
     notes = [noteToAdd, ...notes];
 
-    storageService.save(KEY, noteToAdd)
+    storageService.save(KEY, notes)
 
     window.thenotes = notes;// for debugging purposes
     return noteToAdd; // For next week

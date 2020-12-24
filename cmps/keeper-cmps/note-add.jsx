@@ -4,24 +4,31 @@ export class NoteAdd extends React.Component {
 
     state = {
         noteToAdd: {
-            txt: ''
+            type: "NoteText",
+            info: {
+                txt: ''
+            }
         }
     }
-    
+
     onInputChange = (ev) => {//on input change
         console.log('ev.target.name:', ev.target.name);
         console.log('ev.target.value:', ev.target.value);
 
-        const value = ev.target.type === 'number' ? +ev.target.value
-            : ev.target.value;
+        const value = ev.target.value;
 
         const noteCopy = { ...this.state.noteToAdd };
-        noteCopy[ev.target.name] = value; // like petCopy.name/power = 
+        noteCopy.info[ev.target.name] = value
 
         this.setState({
             noteToAdd: noteCopy
         });
     };
+
+    onAddNote = (ev) => {
+        ev.preventDefault()
+        this.props.addNote(this.state.noteToAdd)
+    }
 
     render() {
         return <form onSubmit={this.onAddNote} >
