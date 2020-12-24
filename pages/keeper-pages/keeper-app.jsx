@@ -1,6 +1,5 @@
 import { NoteAdd } from "../../cmps/keeper-cmps/note-add.jsx";
 import { NoteList } from "../../cmps/keeper-cmps/note-list.jsx";
-// import { NotePreview } from "../../cmps/keeper-cmps/note-preview.jsx";
 import { noteService } from "../../services/keeper-services/note-service.js";
 
 export class KeeperApp extends React.Component {
@@ -22,19 +21,19 @@ export class KeeperApp extends React.Component {
 
         var notes = noteService.query()
         // .then(books => this.setState({ notes })) when use promise.
+
         this.setState({ notes })
     };
 
     onAddNote = (ev) => {//on submit
         ev.preventDefault();
-
-        if (this.state.noteToAdd.length < 1) {
-            alert('mast write somethig!');
+        console.log(ev);
+        if (this.state.noteToAdd.txt < 1) {
+            alert('must write something!');
             return;
-        }
-
+        };
         noteService.add(this.state.noteToAdd);
-        this.loadNotes();
+        this.loadNotes()
     };
 
     onRemoveNote = (noteId) => {

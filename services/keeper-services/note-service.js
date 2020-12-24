@@ -1,10 +1,11 @@
 import { utilService } from "./util-service.js"
 import { storageService } from "../storage-service.js"
+// import { NoteAdd } from "../../cmps/keeper-cmps/note-add.jsx"
 
 export const noteService = {
     query,
-    remove
-    // getCurrency
+    remove,
+    add
 }
 
 function query() {
@@ -55,4 +56,20 @@ function _createNotes() {
 
 function remove(noteId) {
     notes = notes.filter(note => note.id !== noteId);
+}
+
+function add(note) {
+
+    const noteToAdd = {
+        ...note,
+        id: utilService.makeId()
+    };
+
+    console.log('noteToAdd:', noteToAdd);
+    notes = [noteToAdd, ...notes];
+
+    storageService.save(KEY, noteToAdd)
+
+    window.thenotes = notes;// for debugging purposes
+    return noteToAdd; // For next week
 }
