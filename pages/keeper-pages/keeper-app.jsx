@@ -1,3 +1,4 @@
+import { NoteAdd } from "../../cmps/keeper-cmps/note-add.jsx";
 import { NoteList } from "../../cmps/keeper-cmps/note-list.jsx";
 // import { NotePreview } from "../../cmps/keeper-cmps/note-preview.jsx";
 import { noteService } from "../../services/keeper-services/note-service.js";
@@ -46,10 +47,10 @@ export class KeeperApp extends React.Component {
     // }
     render() {
         return <section className="note-app">
-            <input type="text" className="note-input" placeholder="What's on you'r mind..." ></input>
+            <NoteAdd />
             <div className="txt-notes">
-            <h2>Pinned notes</h2>
-                {this.state.notes.length > 0 && <NoteList notes={this.state.notes} onRemove={this.onRemoveNote} />}
+                <h2>Pinned notes</h2>
+                {this.state.notes && this.state.notes.length > 0 && <NoteList notes={this.state.notes} onRemove={this.onRemoveNote} />}
             </div>
         </section>
     }

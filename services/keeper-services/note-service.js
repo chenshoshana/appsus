@@ -1,4 +1,5 @@
 import { utilService } from "./util-service.js"
+import { storageService } from "../storage-service.js"
 
 export const noteService = {
     query,
@@ -10,15 +11,14 @@ function query() {
     // return Promise.resolve(notes)
     return notes
 }
-
+const KEY = 'Notes'
 var notes = _createNotes()
 window.theNotes = notes
 
 function _createNotes() {
-    // var booksFromStorage = storageService.loadFromStorage(KEY)
-    // if (!booksFromStorage || !booksFromStorage.length) {
-    //     booksFromStorage = [
-    return ([
+    var notesFromStorage = storageService.load(KEY)
+    if (!notesFromStorage || !notesFromStorage.length) {
+        notesFromStorage = [
         {
             id: "df52e3",
             type: "NoteText",
@@ -49,7 +49,8 @@ function _createNotes() {
                 ]
             }
         }]
-    )
+    }
+    return notesFromStorage
 }
 
 function remove(noteId) {
