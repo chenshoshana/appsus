@@ -1,6 +1,6 @@
 body {
     background-color: rgb(212, 212, 212);
-    
+    font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
 }
 
@@ -11,32 +11,62 @@ body {
     justify-content: space-around;
     cursor: pointer;
     height: 70px;
-    
     color: rgba(255, 166, 0, 0.945);
 }
+
+
 /* ************************************************************************************************************************************ */
+
+
 /* EMAIL-STYLE */
+
 .email-preview {
     background-color: antiquewhite;
     display: flex;
-    justify-content: space-around;
+    height: 50px;
 }
 
 .email-preview:hover {
     background-color: rgb(223, 206, 184);
-    display: flex;
-    justify-content: space-around;
+}
+
+.email-preview-sent-to {
+    justify-content: center;
+    width: 120px;
+    /* background-color: aqua; */
+    margin-left: 5px;
+}
+
+.email-preview-subject {
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    /* background-color: aquamarine; */
+    text-align: center;
+    margin-left: 5px;
+    height: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .email-preview-body {
-    flex-grow: 1;
     justify-content: center;
+    /* background-color: blue; */
+    flex-grow: 1;
+    margin-left: 5px;
 }
 
+
 /* ************************************************************************************************************************************** */
+
+
 /* ************************************************************************************************************************************ */
+
+
 /* KEEPER-STYLE */
-.note-preview{
+
+.note-preview {
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -46,25 +76,26 @@ body {
     justify-content: space-between;
 }
 
-.note-h1{
+.note-h1 {
     text-align: center;
-  
 }
-.note-input{
+
+.note-input {
     width: 600px;
     height: 60px;
     border: 2px solid rgb(88, 87, 87);
 }
 
-.note-btns{
+.note-btns {
     display: flex;
     justify-content: space-around;
     cursor: pointer
 }
-.add-note-btn{
-  
+
+.add-note-btn {
     height: 65px;
     ;
 }
-/* ************************************************************************************************************************************** */
 
+
+/* ************************************************************************************************************************************** */

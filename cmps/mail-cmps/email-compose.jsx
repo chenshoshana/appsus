@@ -2,9 +2,6 @@ import { mailService } from "../../services/mail-services/mail-service.js";
 import { utilService } from "../../services/keeper-services/util-service.js";
 
 
-
-
-
 export class NewMail extends React.Component {
 
     state = {

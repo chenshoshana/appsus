@@ -6,23 +6,14 @@ import { utilService } from "../../services/keeper-services/util-service.js";
 
 export class MailApp extends React.Component {
 
-
     state = {
         mails: []
     }
+
     createNewMail = (newMail) => {
         mailService.sendMail(newMail)
         this.loadMails()
-        console.log(newMail)
-        // console.log('new mail')
-        // let newMail = { ...this.state.mail };
-        // console.log(newMail)
-        // mailService.sendMail(newMail)
-        // let mails = mailService.query()
-        //  this.setState({mails})
-
     }
-
 
     componentDidMount() {
         this.loadMails()
@@ -34,7 +25,7 @@ export class MailApp extends React.Component {
     };
 
     render() {
-        return <section>
+        return <section className="main-container-mail">
             <h1>aderajoe</h1>
             <NewMail sendMail={this.createNewMail} />
             <EmailList mails={this.state.mails} />
