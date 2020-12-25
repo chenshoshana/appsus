@@ -71,6 +71,16 @@ body {
     height: 40px;
 }
 
+.btn-create-new-mail {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.new-mail-modal-hide {
+    visibility: hidden;
+}
+
 .new-mail-modal {
     position: fixed;
     bottom: 0;
@@ -79,6 +89,10 @@ body {
     flex-direction: column;
     width: 500px;
     height: 600px;
+}
+
+.new-mail-modal-child {
+    height: 100%;
 }
 
 .new-mail-input {

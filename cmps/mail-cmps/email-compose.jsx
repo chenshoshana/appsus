@@ -12,7 +12,8 @@ export class NewMail extends React.Component {
             body: 'what time is it?',
             isRead: false,
             sentAt: 1551133930594
-        }
+        },
+        mailModal:"new-mail-input"
     }
 
     onInputChange = (ev) => {
@@ -39,7 +40,7 @@ export class NewMail extends React.Component {
 
     }
 
-    onCreateNewMail = () => { 
+    onSendNewMail = () => { 
         
         let mailCopy = { ...this.state.mail }
 
@@ -51,16 +52,31 @@ export class NewMail extends React.Component {
 
     }
 
+//     onCreateNewMail= ()=>{
+// var modalCopy=this.state.mailModal
+// if(modalCopy==="new-mail-input"){
+//     modalCopy="new-mail-input-hide"
+// }else{
+//     modalCopy="new-mail-input"
+// }
+    
+// this.setState({mailModal:modalCopy})
+//     }
+
     render() {
-        return( <div className="new-mail-modal">
+        return( 
+        // <div className="new-mail-modal-child">
+
             <div className="new-mail-input">
 
             <textarea onChange={this.onInputChange} type="email" name="sentTo" placeholder="Write to" />
             <textarea onChange={this.onInputChange} type="text" name="subject" placeholder="Subject" />
             <textarea onChange={this.onInputChange} type="text" name="body" placeholder="content" />
-            </div>
-            <button className="btn-send-mail" onClick={this.onCreateNewMail} >send</button>
-        </div>)
+            {/* </div> */}
+            <button className="btn-send-mail" onClick={this.onSendNewMail} >send</button>
+            {/* <button className="btn-create-new-mail" onClick={this.onCreateNewMail}>new mail</button> */}
+        </div>
+            )
     }
 }
 
