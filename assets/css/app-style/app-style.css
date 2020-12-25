@@ -23,7 +23,13 @@ body {
 .email-preview {
     background-color: antiquewhite;
     display: flex;
-    height: 50px;
+    /* height: 50px; */
+    max-width: 900px;
+    /* justify-content: center;
+    align-self: center;
+    align-items: center; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .email-preview:hover {
@@ -35,6 +41,10 @@ body {
     width: 120px;
     /* background-color: aqua; */
     margin-left: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 40px;
 }
 
 .email-preview-subject {
@@ -44,7 +54,7 @@ body {
     /* background-color: aquamarine; */
     text-align: center;
     margin-left: 5px;
-    height: 50px;
+    height: 40px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -53,8 +63,50 @@ body {
 .email-preview-body {
     justify-content: center;
     /* background-color: blue; */
-    flex-grow: 1;
+    width: 660px;
     margin-left: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 40px;
+}
+
+.new-mail-modal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 600px;
+}
+
+.new-mail-input {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+}
+
+textarea[name="sentTo"] {
+    background-color: rgb(194, 243, 243);
+    ;
+    height: 7%;
+}
+
+textarea[name="subject"] {
+    background-color: rgb(194, 243, 243);
+    ;
+    height: 14%;
+}
+
+textarea[name="body"] {
+    background-color: rgb(194, 243, 243);
+    height: 79%;
+    text-overflow: ellipsis;
+}
+
+.btn-send-mail {
+    height: 10%;
 }
 
 

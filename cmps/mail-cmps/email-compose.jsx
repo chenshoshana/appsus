@@ -52,12 +52,15 @@ export class NewMail extends React.Component {
     }
 
     render() {
-        return <div>
-            <input onChange={this.onInputChange} type="email" name="sentTo" placeholder="Write to" />
-            <input onChange={this.onInputChange} type="text" name="subject" placeholder="Subject" />
-            <input onChange={this.onInputChange} type="text" name="body" placeholder="content" />
-            <button onClick={this.onCreateNewMail} >send</button>
-        </div>
+        return( <div className="new-mail-modal">
+            <div className="new-mail-input">
+
+            <textarea onChange={this.onInputChange} type="email" name="sentTo" placeholder="Write to" />
+            <textarea onChange={this.onInputChange} type="text" name="subject" placeholder="Subject" />
+            <textarea onChange={this.onInputChange} type="text" name="body" placeholder="content" />
+            </div>
+            <button className="btn-send-mail" onClick={this.onCreateNewMail} >send</button>
+        </div>)
     }
 }
 

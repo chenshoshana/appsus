@@ -26,9 +26,9 @@ export class MailApp extends React.Component {
 
     render() {
         return <section className="main-container-mail">
-            <h1>aderajoe</h1>
-            <NewMail sendMail={this.createNewMail} />
+            <h1>new Mail</h1>
             <EmailList mails={this.state.mails} />
+            <NewMail sendMail={this.createNewMail} />
         </section>
     }
 }
