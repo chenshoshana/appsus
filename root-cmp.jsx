@@ -11,19 +11,17 @@ export class App extends React.Component {
 
     render() {
         return (
-
-        <Router>
-            <section className="app">
-                <AppHeader />
-                 <Switch>
-                    <Route path="/mail/:mailId" component={MailDetails}/>
-                    <Route path="/mail" component={MailApp}/>
-                    <Route path="/keeper" component={KeeperApp}/>
-                    {/* <Route path="/" component={Home}/> */}
-                </Switch> 
-            </section>
-
-        </Router>
+            <Router>
+                <section className="app">
+                    <AppHeader />
+                    <Switch>
+                        <Route path="/mail/:mailId" component={MailDetails} />
+                        <Route path="/mail" component={MailApp} />
+                        <Route path="/keeper" component={KeeperApp} />
+                        {/* <Route path="/" component={Home}/> */}
+                    </Switch>
+                </section>
+            </Router>
         )
     }
 }

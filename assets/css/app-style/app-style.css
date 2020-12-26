@@ -5,14 +5,18 @@ body {
 }
 
 .nav-list {
-    background-color: rgba(253, 176, 33, 0.883);
+    background-color: rgba(250, 187, 69, 0.883);
     display: flex;
     list-style: none;
     justify-content: space-around;
-    cursor: pointer;
     height: 70px;
-    color: rgba(255, 166, 0, 0.945);
-    padding-left: 0%;
+    border-radius: 10px;
+}
+
+.header-link {
+    cursor: pointer;
+    color: black;
+    text-decoration-line: none;
 }
 
 
@@ -20,6 +24,10 @@ body {
 
 
 /* EMAIL-STYLE */
+
+.main-container-mail {
+    padding-bottom: 30px;
+}
 
 .mails-list {
     box-sizing: border-box;
@@ -33,14 +41,10 @@ body {
 .email-preview {
     box-sizing: border-box;
     display: flex;
-    /* height: 50px; */
     max-width: 900px;
-    /* justify-content: center;
-    align-self: center;
-    align-items: center; */
-    /* border-radius: 15px; */
     text-decoration-line: none;
     width: 100%;
+    color: black;
 }
 
 .email-preview:hover {
@@ -52,46 +56,29 @@ body {
     box-sizing: border-box;
     display: flex;
     width: 360px;
-    text-decoration-line: none;
 }
 
 .email-preview-sent-to {
     box-sizing: border-box;
-    justify-content: center;
     width: 120px;
-    /* background-color: aqua; */
     margin-left: 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* height: 40px; */
     margin-top: 0px;
     margin-bottom: 0px;
     height: 60px;
     padding: 18px;
-    text-decoration-line: none;
 }
 
 .email-preview-sent-to:link {
     text-decoration-line: none;
 }
 
-.mail-link {
-    text-decoration-line: none;
-    color: black;
-    display: flex;
-    /* width: 100%; */
-}
-
 .email-preview-subject {
     box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
     width: 240px;
-    /* background-color: aquamarine; */
-    /* text-align: center; */
     margin-left: 5px;
-    /* height: 40px; */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -103,8 +90,6 @@ body {
 
 .email-preview-body {
     box-sizing: border-box;
-    justify-content: center;
-    /* background-color: blue; */
     width: 540px;
     margin-left: 5px;
     white-space: nowrap;
@@ -118,23 +103,18 @@ body {
     font-weight: normal;
 }
 
-
-/* .email-preview-sent-to {
-    background-color: aqua;
+.create-new-mail {
+    max-width: 900px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
 }
-
-.email-preview-subject {
-    background-color: aquamarine;
-}
-
-.email-preview-body {
-    background-color: blue;
-} */
 
 .btn-create-new-mail {
     border-radius: 15px;
     width: 100px;
     height: 40px;
+    margin-bottom: 5px;
 }
 
 .btn-create-new-mail:hover {
@@ -146,34 +126,22 @@ body {
 .new-mail-modal-hide {
     visibility: hidden;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    height: 600px;
 }
 
 .new-mail-modal {
     position: fixed;
     bottom: 0;
-    left: 0;
+    left: 5px;
     display: flex;
     flex-direction: column;
     width: 500px;
     height: 600px;
-    border-radius: 50px;
-}
-
-.new-mail-modal-child {
-    height: 100%;
 }
 
 .new-mail-input {
     display: flex;
     flex-direction: column;
     height: 100%;
-    border-top-right-radius: 50px;
 }
 
 textarea[name="sentTo"] {
@@ -185,14 +153,12 @@ textarea[name="sentTo"] {
 
 textarea[name="subject"] {
     background-color: rgb(217, 248, 248);
-    ;
     height: 14%;
 }
 
 textarea[name="body"] {
     background-color: rgb(217, 248, 248);
     height: 79%;
-    text-overflow: ellipsis;
 }
 
 .btn-send-mail {
@@ -214,10 +180,8 @@ textarea[name="body"] {
 }
 
 .mail-details-sent-to {
-    /* text-align: center; */
     box-sizing: border-box;
     width: 100%;
-    /* background-color: blue; */
     min-height: 50px;
     padding-top: 20px;
     font-size: 22px;
@@ -226,10 +190,8 @@ textarea[name="body"] {
 }
 
 .mail-details-subject {
-    /* text-align: center; */
     box-sizing: border-box;
     width: 100%;
-    /* background-color: blue; */
     min-height: 50px;
     padding-top: 10px;
     font-size: 16px;
@@ -240,34 +202,32 @@ textarea[name="body"] {
 .mail-details-body {
     box-sizing: border-box;
     width: 100%;
-    /* background-color: blue; */
-    /* height: 70px; */
     padding-top: 20px;
     font-size: 16px;
-    /* font-weight: bold; */
     padding: 10px;
+    white-space: normal;
+    overflow: scroll;
 }
 
 .btn-delete-mail {
-    width: 18%;
     height: 60px;
-    border-radius: 25px;
+    border-radius: 20px;
     margin-top: 40px;
+    width: 140px;
 }
 
 .btn-delete-mail:hover {
     transition: 150ms;
     background-color: aquamarine;
     cursor: pointer;
+    min-width: 140px;
 }
 
 .btn-mail-back {
-    width: 18%;
+    width: 140px;
     height: 60px;
-    border-radius: 25px;
+    border-radius: 20px;
     margin-top: 40px;
-    margin-left: 5%;
-    margin-right: 54%;
     margin-bottom: 30px;
 }
 
@@ -275,6 +235,22 @@ textarea[name="body"] {
     transition: 150ms;
     background-color: aquamarine;
     cursor: pointer;
+}
+
+.btn-mail-back-father {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.btn-delete-mail-father {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.bte-details-container {
+    display: flex;
 }
 
 @media only screen and (max-width: 900px) {
@@ -285,14 +261,8 @@ textarea[name="body"] {
         width: 100%;
     }
     .email-preview-sent-to {
-        justify-content: center;
         width: 30%;
-        /* background-color: aqua; */
         margin-left: 1%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        /* height: 40px; */
         height: 40px;
         padding: 10px;
     }
@@ -300,20 +270,12 @@ textarea[name="body"] {
         justify-content: center;
         align-items: center;
         width: 67%;
-        /* background-color: aquamarine; */
-        /* text-align: center; */
         margin-left: 1%;
-        /* height: 40px; */
         height: 40px;
         padding: 10px;
     }
     .email-preview-body {
-        justify-content: center;
-        /* background-color: blue; */
         width: 98%;
-        /* margin-left: 1%; */
-        /* height: 40px; */
-        margin: auto;
         height: 40px;
         padding: 10px;
     }
@@ -327,34 +289,16 @@ textarea[name="body"] {
         flex-direction: column;
     }
     .email-preview-sent-to {
-        justify-content: center;
         width: 98%;
-        /* background-color: aqua; */
-        margin-left: 1%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        /* height: 40px; */
         height: 25px;
         padding: 5px;
     }
     .email-preview-subject {
-        justify-content: center;
-        align-items: center;
-        width: 98%;
-        /* background-color: aquamarine; */
-        /* text-align: center; */
-        margin-left: 1%;
-        /* height: 40px; */
         height: 25px;
         padding: 5px;
     }
     .email-preview-body {
-        justify-content: center;
-        /* background-color: blue; */
-        width: 98%;
         margin-left: 5px;
-        /* height: 40px; */
         height: 25px;
         padding: 5px;
     }
@@ -364,18 +308,6 @@ textarea[name="body"] {
         left: auto;
     }
 }
-
-
-/* .new-mail-modal {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    height: 600px;
-    border-radius: 50px;
-} */
 
 
 /* ************************************************************************************************************************************** */

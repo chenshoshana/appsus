@@ -8,8 +8,8 @@ export class MailApp extends React.Component {
 
     state = {
         mails: [],
-        mailModal:"new-mail-modal-hide",
-        newMailBtn:"New mail"
+        mailModal: "new-mail-modal-hide",
+        newMailBtn: "New mail"
     }
 
     createNewMail = (newMail) => {
@@ -26,25 +26,29 @@ export class MailApp extends React.Component {
         this.setState({ mails })
     }
 
-    onCreateNewMail= ()=>{
-        var modalCopy=this.state.mailModal
-        if(modalCopy==="new-mail-modal"){
-            modalCopy="new-mail-modal-hide"
-        }else{
-            modalCopy="new-mail-modal"}
-        
-        this.setState({mailModal:modalCopy})
+    onCreateNewMail = () => {
+        var modalCopy = this.state.mailModal
+        var newMailBtn = this.state.newMailBtn
+        if (modalCopy === "new-mail-modal") {
+            modalCopy = "new-mail-modal-hide"
+            newMailBtn = "New mail"
+        } else {
+            modalCopy = "new-mail-modal"
+            newMailBtn = "Go back"
+        }
+        this.setState({ mailModal: modalCopy })
+        this.setState({ newMailBtn })
     }
 
     render() {
         return <section className="main-container-mail">
-            <button className="btn-create-new-mail" onClick={this.onCreateNewMail}>{}</button>
+            <div className="create-new-mail">
+                <button className="btn-create-new-mail" onClick={this.onCreateNewMail}>{this.state.newMailBtn}</button>
+            </div>
             <div className={this.state.mailModal}>
-
-            <NewMail sendMail={this.createNewMail} />
+                <NewMail sendMail={this.createNewMail} />
             </div>
             <EmailList mails={this.state.mails} />
-
         </section>
     }
 }
