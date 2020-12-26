@@ -38,12 +38,12 @@ export class MailApp extends React.Component {
     render() {
         return <section className="main-container-mail">
             <h1>new Mail</h1>
+            <button className="btn-create-new-mail" onClick={this.onCreateNewMail}>new mail</button>
             <div className={this.state.mailModal}>
-hgfh
+
             <NewMail sendMail={this.createNewMail} />
             </div>
             <EmailList mails={this.state.mails} />
-            <button className="btn-create-new-mail" onClick={this.onCreateNewMail}>new mail</button>
 
         </section>
     }
