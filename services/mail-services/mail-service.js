@@ -45,16 +45,16 @@ function _createMails() {
     if (!mailsFromStorage || !mailsFromStorage.length) {
         mailsFromStorage = [{
                     id: 0,
-                    sentTo: 'David',
-                    subject: 'Wassap?',
-                    body: 'Pick up!',
+                    sentTo: 'Netflix',
+                    subject: 'New sign in to your account',
+                    body: 'Hi Aderajoe,                    We noticed a new sign-in with your Netflix account (adetsegay@gmail.com).                                         Device                    Web Browser                   Location                    Compton LA, USA                   (may not match your exact location)                    Time                    September 13th 1996, 6:36 PM GMT+2                If you signed-in recently, relax and enjoy watching! But if you don’t recognize this sign-in, we recommend that you change your password immediately to secure your account.                 Were here to help if you need it. Visit the Help Center for more info or contact us.',
                     isRead: true,
                     sentAt: 1551133930594
                 },
                 {
                     id: 1,
                     sentTo: 'Poki',
-                    subject: 'Are you there?',
+                    subject: 'New sign-in to Netflix',
                     body: 'Pick up the damn phone!',
                     isRead: false,
                     sentAt: 1551133930594

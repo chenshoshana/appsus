@@ -20,8 +20,12 @@ body {
 
 /* EMAIL-STYLE */
 
-.email-preview {
+.mails-list {
+    border-radius: 10px;
     background-color: antiquewhite;
+}
+
+.email-preview {
     display: flex;
     /* height: 50px; */
     max-width: 900px;
@@ -30,10 +34,16 @@ body {
     align-items: center; */
     margin-left: auto;
     margin-right: auto;
+    /* border-radius: 15px; */
 }
 
 .email-preview:hover {
+    transition: 200ms;
     background-color: rgb(223, 206, 184);
+}
+
+.email-preview-head {
+    display: flex;
 }
 
 .email-preview-sent-to {
@@ -44,7 +54,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 40px;
+    /* height: 40px; */
 }
 
 .email-preview-subject {
@@ -54,7 +64,7 @@ body {
     /* background-color: aquamarine; */
     text-align: center;
     margin-left: 5px;
-    height: 40px;
+    /* height: 40px; */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -68,11 +78,31 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    /* height: 40px; */
+}
+
+
+/* .email-preview-sent-to {
+    background-color: aqua;
+}
+
+.email-preview-subject {
+    background-color: aquamarine;
+}
+
+.email-preview-body {
+    background-color: blue;
+} */
+
+.btn-create-new-mail {
+    border-radius: 15px;
+    width: 100px;
     height: 40px;
 }
 
-.btn-create-new-mail {
-    background-color: aqua;
+.btn-create-new-mail:hover {
+    transition: 150ms;
+    background-color: aquamarine;
 }
 
 .new-mail-modal-hide {
@@ -130,6 +160,42 @@ textarea[name="body"] {
 .btn-send-mail {
     height: 10%;
     font-size: large;
+}
+
+.btn-send-mail:hover {
+    background-color: aquamarine;
+}
+
+@media only screen and (max-width: 900px) {
+    .email-preview {
+        flex-direction: column;
+    }
+    .email-preview-sent-to {
+        justify-content: center;
+        width: 30%;
+        /* background-color: aqua; */
+        margin-left: 1%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* height: 40px; */
+    }
+    .email-preview-subject {
+        justify-content: center;
+        align-items: center;
+        width: 67%;
+        /* background-color: aquamarine; */
+        text-align: center;
+        margin-left: 1%;
+        /* height: 40px; */
+    }
+    .email-preview-body {
+        justify-content: center;
+        /* background-color: blue; */
+        width: 98%;
+        margin-left: 5px;
+        /* height: 40px; */
+    }
 }
 
 
