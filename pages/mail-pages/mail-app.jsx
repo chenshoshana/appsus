@@ -8,7 +8,8 @@ export class MailApp extends React.Component {
 
     state = {
         mails: [],
-        mailModal:"new-mail-modal-hide"
+        mailModal:"new-mail-modal-hide",
+        newMailBtn:"New mail"
     }
 
     createNewMail = (newMail) => {
@@ -37,7 +38,7 @@ export class MailApp extends React.Component {
 
     render() {
         return <section className="main-container-mail">
-            <button className="btn-create-new-mail" onClick={this.onCreateNewMail}>new mail</button>
+            <button className="btn-create-new-mail" onClick={this.onCreateNewMail}>{}</button>
             <div className={this.state.mailModal}>
 
             <NewMail sendMail={this.createNewMail} />
