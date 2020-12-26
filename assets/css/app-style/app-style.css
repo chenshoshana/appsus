@@ -41,6 +41,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     /* border-radius: 15px; */
+    text-decoration-line: none;
 }
 
 .email-preview:hover {
@@ -52,6 +53,7 @@ body {
     box-sizing: border-box;
     display: flex;
     width: 240px;
+    text-decoration-line: none;
 }
 
 .email-preview-sent-to {
@@ -68,6 +70,16 @@ body {
     margin-bottom: 0px;
     height: 60px;
     padding: 18px;
+    text-decoration-line: none;
+}
+
+.email-preview-sent-to:link {
+    text-decoration-line: none;
+}
+
+.mail-link {
+    text-decoration-line: none;
+    color: black;
 }
 
 .email-preview-subject {
@@ -163,20 +175,20 @@ body {
 }
 
 textarea[name="sentTo"] {
-    background-color: rgb(194, 243, 243);
+    background-color: rgb(217, 248, 248);
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     height: 7%;
 }
 
 textarea[name="subject"] {
-    background-color: rgb(194, 243, 243);
+    background-color: rgb(217, 248, 248);
     ;
     height: 14%;
 }
 
 textarea[name="body"] {
-    background-color: rgb(194, 243, 243);
+    background-color: rgb(217, 248, 248);
     height: 79%;
     text-overflow: ellipsis;
 }

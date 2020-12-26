@@ -1,5 +1,8 @@
 import { EmailPreview } from '../../cmps/mail-cmps/email-preview.jsx'
 
+
+const Router = ReactRouterDOM.HashRouter;
+const { Route, Switch } = ReactRouterDOM;
 export function EmailList({ mails}) {
     // console.log(mails)
     return    (
@@ -8,7 +11,9 @@ export function EmailList({ mails}) {
         {mails.map(email => {
             console.log('hello')
             if(!email)return <div>dont work</div>
-            return <EmailPreview key={email.id}  email={email}/>
+            return <div key={email.id}>
+                <EmailPreview  email={email}/>
+            </div>
         })}
         </section>
         )

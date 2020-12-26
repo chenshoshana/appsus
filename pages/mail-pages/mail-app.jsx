@@ -8,7 +8,7 @@ export class MailApp extends React.Component {
 
     state = {
         mails: [],
-        mailModal:"new-mail-modal"
+        mailModal:"new-mail-modal-hide"
     }
 
     createNewMail = (newMail) => {

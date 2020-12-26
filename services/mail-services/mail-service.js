@@ -4,7 +4,8 @@ import { utilService } from "../../services/keeper-services/util-service.js";
 
 export const mailService = {
     query,
-    sendMail
+    sendMail,
+    getById
 }
 
 const KEY = 'mails';
@@ -18,6 +19,14 @@ function query() {
     // console.log(mails)
     return mails
 }
+
+function getById(mailId) {
+    // debugger
+    const mail = mails.find(mail => mail.id === mailId);
+    return Promise.resolve(mail);
+}
+
+
 
 function sendMail(newMail) {
 
@@ -43,8 +52,9 @@ function sendMail(newMail) {
 function _createMails() {
     var mailsFromStorage = storageService.load(KEY)
     if (!mailsFromStorage || !mailsFromStorage.length) {
+        // const randomId = utilService.mailId()
         mailsFromStorage = [{
-                    id: 0,
+                    id: "jkfd7n",
                     sentTo: 'Netflix',
                     subject: 'New sign in to your account',
                     body: 'Hi Aderajoe,                    We noticed a new sign-in with your Netflix account (adetsegay@gmail.com).                                         Device                    Web Browser                   Location                    Compton LA, USA                   (may not match your exact location)                    Time                    September 13th 1996, 6:36 PM GMT+2                If you signed-in recently, relax and enjoy watching! But if you don’t recognize this sign-in, we recommend that you change your password immediately to secure your account.                 Were here to help if you need it. Visit the Help Center for more info or contact us.',
@@ -52,7 +62,7 @@ function _createMails() {
                     sentAt: 1551133930594
                 },
                 {
-                    id: 1,
+                    id: "7rnvT3",
                     sentTo: 'Poki',
                     subject: 'New sign-in to Netflix',
                     body: 'Pick up the damn phone!',
@@ -60,7 +70,7 @@ function _createMails() {
                     sentAt: 1551133930594
                 },
                 {
-                    id: 2,
+                    id: "f73vye",
                     sentTo: '2Pac',
                     subject: 'hey',
                     body: 'what time is it?',
