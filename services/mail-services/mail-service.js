@@ -5,7 +5,8 @@ import { utilService } from "../../services/keeper-services/util-service.js";
 export const mailService = {
     query,
     sendMail,
-    getById
+    getById,
+    deleteMail
 }
 
 const KEY = 'mails';
@@ -26,7 +27,15 @@ function getById(mailId) {
     return Promise.resolve(mail);
 }
 
+function deleteMail(mailId) {
 
+    for (var i = 0; i < mails.length; i++) {
+        if (mails[i].id == mailId) {
+            mails.splice(i, 1);
+            break;
+        }
+    }
+}
 
 function sendMail(newMail) {
 

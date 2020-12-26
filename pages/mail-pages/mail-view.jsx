@@ -5,19 +5,19 @@ const { Link } = ReactRouterDOM;
 
 export class MailDetails extends React.Component {
     state = {
-        mail:null
+        mail: null
     };
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.match.params.mailId !== this.props.match.params.mailId) {
-            console.log('UPDATE', this.props);
-     
-            
-            this.loadMail()
-        }
-            // this.loadMail()
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.match.params.mailId !== this.props.match.params.mailId) {
+    //         console.log('UPDATE', this.props);
 
-    }
+
+    //         this.loadMail()
+    //     }
+    //     // this.loadMail()
+
+    // }
     componentDidMount() {
         console.log('MOUNT', this.props);
         this.loadMail();
@@ -26,36 +26,41 @@ export class MailDetails extends React.Component {
 
     loadMail() {
         // debugger
-        const  {mailId}  = this.props.match.params;
+        const { mailId } = this.props.match.params;
         mailService.getById(mailId).then(mail => {
-            console.log('1')
-
-            console.log(mail)
-            // debugger
-            // newMail= [newMail]
             this.setState({ mail });
         });
     }
+    onDelete = () => {
+mailService.deleteMail(this.state.mail.id)
+this.onBack()
+    }
 
+    onBack=()=>{
+        this.props.history.goBack()
 
-    render(){
-         if (!this.state.mail) return <div>Loading..</div>;
-        
-        return( <div>
-<section className="mail-details">
+    }
+    render() {
+        if (!this.state.mail) return <div>Loading..</div>;
+
+        return (<div>
+            <section className="mail-details">
                 {/* <h1>Pet Details {this.state.mail.subject}</h1> */}
                 {/* <pre>{JSON.stringify(this.state.mail, null, 2)}</pre>  */}
-<span>{this.state.mail.sentTo}</span>
-<hr />
+                <div className="mail-details-sent-to">{this.state.mail.sentTo}</div>
+                {/* <hr /> */}
 
-<span>{this.state.mail.subject}</span>
-<hr />
+                <div className="mail-details-subject">{this.state.mail.subject}</div>
+                {/* <hr /> */}
 
-<span>{this.state.mail.body}</span>
+                <div className="mail-details-body">{this.state.mail.body}</div>
 
+            <div>
 
-                <hr />
-                <button onClick={this.onBack}>Back</button>
+            <button className="btn-mail-back" onClick={this.onBack}>Go back</button>
+            <button className="btn-delete-mail" onClick={this.onDelete}>Delete and go back</button>
+            </div>
+
             </section>
         </div>)
     }
