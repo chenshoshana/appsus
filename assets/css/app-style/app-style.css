@@ -12,6 +12,7 @@ body {
     cursor: pointer;
     height: 70px;
     color: rgba(255, 166, 0, 0.945);
+    padding-left: 0%;
 }
 
 
@@ -21,11 +22,16 @@ body {
 /* EMAIL-STYLE */
 
 .mails-list {
+    box-sizing: border-box;
     border-radius: 10px;
     background-color: antiquewhite;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .email-preview {
+    box-sizing: border-box;
     display: flex;
     /* height: 50px; */
     max-width: 900px;
@@ -43,10 +49,13 @@ body {
 }
 
 .email-preview-head {
+    box-sizing: border-box;
     display: flex;
+    width: 240px;
 }
 
 .email-preview-sent-to {
+    box-sizing: border-box;
     justify-content: center;
     width: 120px;
     /* background-color: aqua; */
@@ -55,22 +64,32 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     /* height: 40px; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 60px;
+    padding: 18px;
 }
 
 .email-preview-subject {
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
     width: 120px;
     /* background-color: aquamarine; */
-    text-align: center;
+    /* text-align: center; */
     margin-left: 5px;
     /* height: 40px; */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 60px;
+    padding: 18px;
 }
 
 .email-preview-body {
+    box-sizing: border-box;
     justify-content: center;
     /* background-color: blue; */
     width: 660px;
@@ -78,21 +97,25 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* height: 40px; */
+    height: 60px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 18px;
+    font-size: 12px;
+    font-weight: normal;
 }
 
-
-/* .email-preview-sent-to {
-    background-color: aqua;
+.email-preview-sent-to {
+    /* background-color: aqua; */
 }
 
 .email-preview-subject {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
 
 .email-preview-body {
-    background-color: blue;
-} */
+    /* background-color: blue; */
+}
 
 .btn-create-new-mail {
     border-radius: 15px;
@@ -103,6 +126,7 @@ body {
 .btn-create-new-mail:hover {
     transition: 150ms;
     background-color: aquamarine;
+    cursor: pointer;
 }
 
 .new-mail-modal-hide {
@@ -170,6 +194,9 @@ textarea[name="body"] {
     .email-preview {
         flex-direction: column;
     }
+    .email-preview-head {
+        width: 100%;
+    }
     .email-preview-sent-to {
         justify-content: center;
         width: 30%;
@@ -179,15 +206,61 @@ textarea[name="body"] {
         overflow: hidden;
         text-overflow: ellipsis;
         /* height: 40px; */
+        height: 40px;
+        padding: 10px;
     }
     .email-preview-subject {
         justify-content: center;
         align-items: center;
         width: 67%;
         /* background-color: aquamarine; */
-        text-align: center;
+        /* text-align: center; */
         margin-left: 1%;
         /* height: 40px; */
+        height: 40px;
+        padding: 10px;
+    }
+    .email-preview-body {
+        justify-content: center;
+        /* background-color: blue; */
+        width: 98%;
+        /* margin-left: 1%; */
+        /* height: 40px; */
+        margin: auto;
+        height: 40px;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .email-preview-head {
+        flex-direction: column;
+    }
+    .email-preview {
+        flex-direction: column;
+    }
+    .email-preview-sent-to {
+        justify-content: center;
+        width: 98%;
+        /* background-color: aqua; */
+        margin-left: 1%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* height: 40px; */
+        height: 25px;
+        padding: 5px;
+    }
+    .email-preview-subject {
+        justify-content: center;
+        align-items: center;
+        width: 98%;
+        /* background-color: aquamarine; */
+        /* text-align: center; */
+        margin-left: 1%;
+        /* height: 40px; */
+        height: 25px;
+        padding: 5px;
     }
     .email-preview-body {
         justify-content: center;
@@ -195,8 +268,27 @@ textarea[name="body"] {
         width: 98%;
         margin-left: 5px;
         /* height: 40px; */
+        height: 25px;
+        padding: 5px;
+    }
+    .new-mail-modal {
+        width: 90vw;
+        margin-left: auto;
+        left: auto;
     }
 }
+
+
+/* .new-mail-modal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 600px;
+    border-radius: 50px;
+} */
 
 
 /* ************************************************************************************************************************************** */
